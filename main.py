@@ -1,7 +1,12 @@
 import requests
 import os
+from dotenv import load_dotenv
 
-api_key = os.environ["api_key"]
+# Create and access an environment variable file (.env)
+load_dotenv(".env")
+
+# Store my open weather map api in the .env file
+api_key = os.getenv("API_KEY")
 OWM_ENDPOINT = "https://api.openweathermap.org/data/3.0/onecall"
 weather_parameters = {
     "lat": 30.468580,
